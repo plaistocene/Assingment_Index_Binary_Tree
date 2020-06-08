@@ -48,7 +48,7 @@ void MainFunctions::PrintMenu(std::string &idxCreationTime) {
 			  //"=============================================="
 			  "══════════════════════════════════════════════" << (char) 187 << std::endl <<
 			  "║       Simple Document Retrieval System       ║" << std::endl <<
-			  "║       Time as min:sec:.." << idxCreationTime << "                  ║" << std::endl <<
+			  "║       Time as min:sec:.." << idxCreationTime << "           ║" << std::endl <<
 			  //"║==============================================║"
 			  "╠══════════════════════════════════════════════╣" << std::endl <<
 			  "║   1. Enter a word to list documents          ║" << std::endl <<
@@ -132,7 +132,7 @@ std::string MainFunctions::GetAWord() {
 	return word;
 }
 
-void MainFunctions::PrintFiles(const std::vector<std::string> &listOfFilesNames, std::string singleWordQuery) {
+void MainFunctions::PrintFiles(const std::vector<std::string> &listOfFilesNames, const std::string &singleWordQuery) {
 	//TODO: do a loop get the goods
 	std::cout << "The Files That Include" << ' ' << '\"' << singleWordQuery << '\"' << ' ' << "are:.." << std::endl;
 	for (auto &j : listOfFilesNames)

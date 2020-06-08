@@ -13,7 +13,7 @@ public:
 
 	static std::string GetAWord();
 
-	static void PrintFiles(const std::vector<std::string> &listOfFilesNames, std::string singleWordQuery);
+	static void PrintFiles(const std::vector<std::string> &listOfFilesNames, const std::string &singleWordQuery);
 
 	static void PrintTops(const std::vector<std::pair<std::string, int>> &tops, const int topWhat);
 

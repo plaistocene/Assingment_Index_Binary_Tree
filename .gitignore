@@ -1,5 +1,8 @@
 # Project exclude paths
 /cmake-build-debug/
 
-# Ignore all .txt
+# Ignore AllDocs
 /AllDocs/
+
+# Ignore .txt
+*.txt
