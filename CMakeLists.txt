@@ -7,7 +7,7 @@ include_directories(headers)
 include_directories(src)
 
 add_executable(Assingment_Index_Binary_Tree
-        headers/CHRTimer.h
+        headers/Timer.h
         headers/FileNameNode.h
         headers/IndexLinkedList.h
         headers/MainFunctions.h
