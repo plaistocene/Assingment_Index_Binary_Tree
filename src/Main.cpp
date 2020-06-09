@@ -13,8 +13,8 @@ int main() {
 	timer.Start();
 
 	//	DIR_NUMBER = 9598
-//	MainFunctions::CreateIndex(index, 9598);
-	MainFunctions::CreateIndex(index, 6);
+	MainFunctions::CreateIndex(index, 9598);
+//	MainFunctions::CreateIndex(index, 6);
 
 	//	stop the timer
 	timer.Stop();
