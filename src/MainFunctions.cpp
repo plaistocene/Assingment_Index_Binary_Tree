@@ -46,7 +46,7 @@ void MainFunctions::PrintMenu(std::string &idxCreationTime) {
 	std::cout <<
 			  "╔══════════════════════════════════════════════╗" << std::endl <<
 			  "║       Simple Document Retrieval System       ║" << std::endl <<
-			  "║       Time as min:sec:.." << idxCreationTime << "           ║" << std::endl <<
+			  "║       Time as min:sec:.." << idxCreationTime << "          ║" << std::endl <<
 			  "╠══════════════════════════════════════════════╣" << std::endl <<
 			  "║   1. Enter a word to list documents          ║" << std::endl <<
 			  "║   2. Print  most frequent 10 words           ║" << std::endl <<

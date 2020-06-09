@@ -9,6 +9,8 @@ int main() {
 	std::string idxCreationTime;
 	Timer timer;
 
+	std::cout << "Initializing Index Please Wait.." << std::endl;
+
 	//	Start timer to measure duriation of index creation
 	timer.Start();
 
