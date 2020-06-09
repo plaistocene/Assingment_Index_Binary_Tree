@@ -37,7 +37,7 @@ public:
 			return;
 		}
 
-		if (LexiSmall(root->GetWord(), word)) {
+		if (!LexiSmall(root->GetWord(), word)) {
 			if (root->left == nullptr) {
 				root->left = new WordTypeNode(word, fileName);
 				return;
@@ -47,7 +47,7 @@ public:
 				return;
 			}
 		}
-		if (!LexiSmall(root->GetWord(), word)) {
+		if (LexiSmall(root->GetWord(), word)) {
 			if (root->right == nullptr) {
 				root->right = new WordTypeNode(word, fileName);
 				return;
@@ -82,14 +82,15 @@ public:
 private:
 	void GetListOfFilesRec(WordTypeNode *root, std::vector<std::string> &listOfFilesNames,
 						   const std::string &singleWordQuery) const {
+		if(root == nullptr) return;
 		if (root->GetWord() == singleWordQuery) {
 			FillTheVector(root, listOfFilesNames);
 			return;
 		}
 		if (LexiSmall(root->GetWord(), singleWordQuery))
-			GetListOfFilesRec(root->left, listOfFilesNames, singleWordQuery);
-		if (!LexiSmall(root->GetWord(), singleWordQuery))
 			GetListOfFilesRec(root->right, listOfFilesNames, singleWordQuery);
+		if (!LexiSmall(root->GetWord(), singleWordQuery))
+			GetListOfFilesRec(root->left, listOfFilesNames, singleWordQuery);
 	}
 
 	void FillTheVector(WordTypeNode *r, std::vector<std::string> &listOfFilesNames) const {

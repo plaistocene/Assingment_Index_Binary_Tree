@@ -44,100 +44,75 @@ bool MainFunctions::CreateIndex(IndexLinkedList &index, const int DIR_NUMBER) { 
 void MainFunctions::PrintMenu(std::string &idxCreationTime) {
 	// 123456789 123456789 123456789 123456789 132456789 123456789 123456789 123456789 123456789 //
 	std::cout <<
-			  (char) 201 <<
-			  //"=============================================="
-			  "══════════════════════════════════════════════" << (char) 187 << std::endl <<
+			  "╔══════════════════════════════════════════════╗" << std::endl <<
 			  "║       Simple Document Retrieval System       ║" << std::endl <<
 			  "║       Time as min:sec:.." << idxCreationTime << "           ║" << std::endl <<
-			  //"║==============================================║"
 			  "╠══════════════════════════════════════════════╣" << std::endl <<
 			  "║   1. Enter a word to list documents          ║" << std::endl <<
 			  "║   2. Print  most frequent 10 words           ║" << std::endl <<
 			  "║   3. Print least frequent 10 words           ║" << std::endl <<
-			  "║   4. Exit                                    ║" << std::endl
-			  << (char) 200 <<
-			  //"=============================================="
-			  "══════════════════════════════════════════════" << (char) 188 << std::endl <<
-			  "║   Enter Your Choice:.. "; /*<<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl <<
-"                        m                       " << std::endl;*/
+			  "║   4. Exit                                    ║" << std::endl <<
+			  "╠══════════════════════════════════════════════╣" << std::endl;
 }
 
 int MainFunctions::GetValidOption(int &option) {
+	std::string cho;
+	std::stringstream ss;
 	while (true) {
-		std::cin >> option;
-		if (option < 0) {
-			std::cout <<
-					  //"|===========================================================================================|"
-					  "╠═══════════════════════════════════════════════════════════════════════════════════════════╣"
-					  << std::endl <<
-					  "    You entered a value that is too low  which even not exists, please try a higher value..  "
-					  << std::endl <<
-					  //"|===========================================================================================|"
-					  "╠═══════════════════════════════════════════════════════════════════════════════════════════╣"
-					  << std::endl;
-		}
-		if (4 < option) {
-			std::cout <<
-					  //"|============================================================================================|"
-					  "╠═══════════════════════════════════════════════════════════════════════════════════════════╣"
-					  << std::endl <<
-					  "    You entered a value that is too high which even not exists, please try a higher value..  "
-					  << std::endl <<
-					  //"|============================================================================================|"
-					  "╠═══════════════════════════════════════════════════════════════════════════════════════════╣"
-					  << std::endl;
-		}
-		if (0 < option && option < 5) {
-			std::cout <<
-					  //"|==============================================|"
-					  "╠══════════════════════════════════════════════╣" << std::endl;
-			return option;
+		std::cout << "»»  Enter Your Choice:.. ";
+		std::cin >> cho;
+		if(std::stringstream(cho) >> option) {
+			if (option < 0) {
+				std::cout <<
+						  "╔═══════════════════════════════════════════════════════════════════════════════════════════╗"
+						  << std::endl <<
+						  "║   You entered a value that is too low  which even not exists, please try a higher value.. ║"
+						  << std::endl <<
+						  "╚═══════════════════════════════════════════════════════════════════════════════════════════╝"
+						  << std::endl;
+			}
+			if (4 < option) {
+				std::cout <<
+						  "╔═══════════════════════════════════════════════════════════════════════════════════════════╗"
+						  << std::endl <<
+						  "║   You entered a value that is too high which even not exists, please try a lower  value.. ║"
+						  << std::endl <<
+						  "╚═══════════════════════════════════════════════════════════════════════════════════════════╝"
+						  << std::endl;
+			}
+			if (0 < option && option < 5) {
+				std::cout <<
+						  "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓" << std::endl <<
+						  "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒" << std::endl <<
+						  "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░" << std::endl;
+				return option;
+			}
+		} else {
+			std::cout << "You entered a non integer value please try again\n";
 		}
 	}
 }
 
 std::string MainFunctions::GetAWord() {
 	std::cout <<
-			  //"|==============================================|"
-			  "╠══════════════════════════════════════════════╣" << std::endl <<
-			  "|   Enter Your KeyWord:.. ";
+			  "╔══════════════════════════════════════════════╗" << std::endl <<
+			  "»»	Enter Your KeyWord:.. ";
 	std::string word;
 	std::cin >> word;
 	std::cout <<
-			  //"|==============================================|"
-			  "╠══════════════════════════════════════════════╣";
+			  "╚══════════════════════════════════════════════╝" << std::endl;
 	return word;
 }
 
 void MainFunctions::PrintFiles(const std::vector<std::string> &listOfFilesNames, const std::string &singleWordQuery) {
 	//TODO: do a loop get the goods
-	std::cout << "The Files That Include" << ' ' << '\"' << singleWordQuery << '\"' << ' ' << "are:.." << std::endl;
+	std::cout <<
+			  "╔══════════════════════════════════════════════╗" << std::endl <<
+			  "The Files That Include" << ' ' << '\"' << singleWordQuery << '\"' << ' ' << "are:.." << std::endl;
 	for (auto &j : listOfFilesNames)
 		std::cout << std::setw(6) << std::left << j << ' ' << ':' << ' ';
-	std::cout << std::endl;
+	std::cout << std::endl <<
+			  "╚══════════════════════════════════════════════╝" << std::endl;
 }
 
 void MainFunctions::PrintTops(const std::vector<std::pair<std::string, int>> &tops, const int topWhat) {

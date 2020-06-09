@@ -9,24 +9,22 @@ int main() {
 	std::string idxCreationTime;
 	Timer timer;
 
-	/*Start timer to measure duriation of index creation*/
+	//	Start timer to measure duriation of index creation
 	timer.Start();
-	// DIR_NUMBER = 9598
-	MainFunctions::CreateIndex(index, 6);
-	//MainFunctions::CreateIndex(index, 5);
-	timer.Stop();
-	/*stop the timer*/
 
-	/*convert time into std::string and store in idxCreationTime*/
+	//	DIR_NUMBER = 9598
+//	MainFunctions::CreateIndex(index, 9598);
+	MainFunctions::CreateIndex(index, 6);
+
+	//	stop the timer
+	timer.Stop();
+
+	//	convert time into std::string and store in idxCreationTime
 	timer.GetElapsed();
 	int min = timer.GetMinutes();
 	double sec = timer.GetSeconds();
 
 	idxCreationTime = std::to_string(min) + '.' + std::to_string(sec);
-
-	//std::cout << "and the winner timeee iiis:.." << std::endl;
-	//std::cout << timer.GetElapsedAsSeconds() << std::endl;
-	//std::cout << idxCreationTime << std::endl << std::endl;
 
 	int option;
 	std::string word;
@@ -51,15 +49,15 @@ int main() {
 			case 2:
 				tops = index.GetMostFrequentWords(10);
 				MainFunctions::PrintTops(tops, 10);
-				getchar();
 				std::cout << "press \'enter\' to continue";
+				getchar();
 				getchar();
 				break;
 			case 3:
 				leasts = index.GetLeastFrequentWords(10);
 				MainFunctions::PrintLeast(leasts, 10);
-				getchar();
 				std::cout << "press \'enter\' to continue";
+				getchar();
 				getchar();
 				break;
 			default:
@@ -71,64 +69,8 @@ int main() {
 	std::cout << "press \'enter\' for exit";
 	getchar();
 
-
-//std::cout << "Hello" << std::flush; //flush forces the printing to the screen before it clears
-
-
-//index.PrintListWithSpecificLetter("a"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("b"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("c"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("d"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("e"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("f"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("g"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("h"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("i"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("j"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("k"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("l"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("m"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("n"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("o"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("p"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("q"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("r"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("s"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("t"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("u"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("v"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("w"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("x"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("y"); std::cout << std::endl;
-//index.PrintListWithSpecificLetter("z"); std::cout << std::endl;
 	return 0;
 }
-
-//int main() {
-//	using std::cout;
-//	using std::endl;
-//	using namespace std::chrono;
-//	// Create timer
-//
-//	cout << "press any key to start the timer";
-//	getchar();
-//	high_resolution_clock::time_point t1 = high_resolution_clock::now();
-//	// Start the timer
-//
-//	getchar();
-//
-//	// Stop the timer
-//	high_resolution_clock::time_point t2 = high_resolution_clock::now();
-//
-//
-//	// Get time elapsed
-//	duration<double> time_span = duration_cast<duration<double>>(t2 - t1);
-//
-//	std::cout << "It took me " << time_span.count() << " seconds.";
-//	std::cout << std::endl;
-//
-//	return 0;
-//}
 
 //int main() {
 //	using std::cout;
