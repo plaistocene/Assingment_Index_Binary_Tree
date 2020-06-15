@@ -6,3 +6,6 @@
 
 # Ignore .txt
 *.txt
+
+#ignore upload zip
+c1511002.zip
