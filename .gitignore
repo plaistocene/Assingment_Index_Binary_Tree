@@ -4,8 +4,17 @@
 # Ignore AllDocs
 /AllDocs/
 
-# Ignore .txt
-*.txt
-
-#ignore upload zip
+# Ignore upload zip
 c1511002.zip
+
+# Ignore .o files
+*.o
+
+# Ignore Custom Texts for Testing
+/Custom\ Texts\ for\ Testing/
+
+# Ignore executable
+c1511002_BSTindex
+
+# Ignore VSCode files
+/.vscode/

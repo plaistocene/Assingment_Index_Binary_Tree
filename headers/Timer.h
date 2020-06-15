@@ -23,7 +23,7 @@ public:
 	// Stops the timer
 	void Stop() {
 		t2 = std::chrono::high_resolution_clock::now();
-		time_span = duration_cast<std::chrono::duration<double>>(t2 - t1);
+		time_span = std::chrono::duration_cast<std::chrono::duration<double>>(t2 - t1);
 	}
 
 	// Returns the interval between the last Start() and Stop()

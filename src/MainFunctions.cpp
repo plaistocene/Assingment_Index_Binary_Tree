@@ -115,7 +115,7 @@ void MainFunctions::PrintFiles(const std::vector<std::string> &listOfFilesNames,
 			  "╚══════════════════════════════════════════════╝" << std::endl;
 }
 
-void MainFunctions::PrintTops(const std::vector<std::pair<std::string, int>> &tops, const int topWhat) {
+void MainFunctions::PrintTops(const std::vector<std::pair<std::string, int> > &tops, const int topWhat) {
 	//TODO: do a loop get the goods
 	std::cout << "Top" << ' ' << topWhat << ' ' << "Words are:.." << "(this is 10 at main.cpp)" << std::endl;
 	std::cout << std::setw(15) << std::left << "Words" << ':' << std::setw(5) << std::left << "Frequency" << std::endl;
@@ -124,7 +124,7 @@ void MainFunctions::PrintTops(const std::vector<std::pair<std::string, int>> &to
 	std::cout << std::endl;
 }
 
-void MainFunctions::PrintLeast(const std::vector<std::pair<std::string, int>> &leasts, const int leastWhat) {
+void MainFunctions::PrintLeast(const std::vector<std::pair<std::string, int> > &leasts, const int leastWhat) {
 	//TODO: do a loop get the goods
 	std::cout << "Least" << ' ' << leastWhat << ' ' << "Words are:.." << "(this is 10 at main.cpp)" << std::endl;
 	std::cout << std::setw(15) << std::left << "Words" << ':' << std::setw(5) << std::left << "Frequency" << std::endl;

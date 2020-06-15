@@ -82,7 +82,7 @@ public:
 private:
 	void GetListOfFilesRec(WordTypeNode *root, std::vector<std::string> &listOfFilesNames,
 						   const std::string &singleWordQuery) const {
-		if(root == nullptr) return;
+		if (root == nullptr) return;
 		if (root->GetWord() == singleWordQuery) {
 			FillTheVector(root, listOfFilesNames);
 			return;
@@ -233,6 +233,7 @@ private:
 		if (word[0] == 'x') return x;
 		if (word[0] == 'y') return y;
 		if (word[0] == 'z') return z;
+		else { return -1; }
 	}
 
 };
